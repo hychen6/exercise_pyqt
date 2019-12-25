@@ -1,0 +1,101 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'signal_show_main.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.2
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1440, 900)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.tableView = QtWidgets.QTableView(self.centralwidget)
+        self.tableView.setGeometry(QtCore.QRect(0, 0, 251, 861))
+        self.tableView.setObjectName("tableView")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(50, 10, 151, 41))
+        self.pushButton.setObjectName("pushButton")
+        self.widget = MatplotlibWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(260, 0, 1221, 851))
+        self.widget.setObjectName("widget")
+        self.widget_2 = Drawing(self.widget)
+        self.widget_2.setGeometry(QtCore.QRect(-10, 0, 1181, 881))
+        self.widget_2.setObjectName("widget_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1440, 22))
+        self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setObjectName("menu")
+        self.menu_2 = QtWidgets.QMenu(self.menubar)
+        self.menu_2.setObjectName("menu_2")
+        self.menu_3 = QtWidgets.QMenu(self.menubar)
+        self.menu_3.setObjectName("menu_3")
+        self.menu_4 = QtWidgets.QMenu(self.menubar)
+        self.menu_4.setObjectName("menu_4")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.toolBar = QtWidgets.QToolBar(MainWindow)
+        self.toolBar.setObjectName("toolBar")
+        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+        self.toolBar_2 = QtWidgets.QToolBar(MainWindow)
+        self.toolBar_2.setObjectName("toolBar_2")
+        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar_2)
+        self.toolBar_3 = QtWidgets.QToolBar(MainWindow)
+        self.toolBar_3.setObjectName("toolBar_3")
+        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar_3)
+        self.actionopen = QtWidgets.QAction(MainWindow)
+        self.actionopen.setObjectName("actionopen")
+        self.actionsave = QtWidgets.QAction(MainWindow)
+        self.actionsave.setObjectName("actionsave")
+        self.actionasave = QtWidgets.QAction(MainWindow)
+        self.actionasave.setObjectName("actionasave")
+        self.actionedit = QtWidgets.QAction(MainWindow)
+        self.actionedit.setObjectName("actionedit")
+        self.actionview = QtWidgets.QAction(MainWindow)
+        self.actionview.setObjectName("actionview")
+        self.actionhelp = QtWidgets.QAction(MainWindow)
+        self.actionhelp.setObjectName("actionhelp")
+        self.menu.addAction(self.actionopen)
+        self.menu.addAction(self.actionsave)
+        self.menu.addAction(self.actionasave)
+        self.menu_2.addAction(self.actionedit)
+        self.menu_3.addAction(self.actionview)
+        self.menu_4.addAction(self.actionhelp)
+        self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_2.menuAction())
+        self.menubar.addAction(self.menu_3.menuAction())
+        self.menubar.addAction(self.menu_4.menuAction())
+        self.toolBar.addSeparator()
+        self.toolBar_3.addSeparator()
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButton.setText(_translate("MainWindow", "请选择文件"))
+        self.menu.setTitle(_translate("MainWindow", "文件"))
+        self.menu_2.setTitle(_translate("MainWindow", "编辑"))
+        self.menu_3.setTitle(_translate("MainWindow", "视图"))
+        self.menu_4.setTitle(_translate("MainWindow", "帮助"))
+        self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
+        self.toolBar_2.setWindowTitle(_translate("MainWindow", "toolBar_2"))
+        self.toolBar_3.setWindowTitle(_translate("MainWindow", "toolBar_3"))
+        self.actionopen.setText(_translate("MainWindow", "打开"))
+        self.actionsave.setText(_translate("MainWindow", "保存"))
+        self.actionasave.setText(_translate("MainWindow", "另存为"))
+        self.actionedit.setText(_translate("MainWindow", "编辑"))
+        self.actionview.setText(_translate("MainWindow", "视图"))
+        self.actionhelp.setText(_translate("MainWindow", "帮助"))
+from plot import Drawing, MatplotlibWidget
