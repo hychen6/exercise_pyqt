@@ -3,8 +3,9 @@ from PyQt5.QtCore import *
 
 from PyQt5.QtWidgets import QFileDialog,QMainWindow
 from signal_show_main import Ui_MainWindow
+from mailmerge import MailMerge
 #from plotly_py import Plotly_PyQt5
-
+'''
 class MyWindow(QMainWindow,Ui_MainWindow):
     def __init__(self):
         super(MyWindow, self).__init__()
@@ -14,12 +15,12 @@ class MyWindow(QMainWindow,Ui_MainWindow):
         #self.webEngineView.load(QUrl.fromLocalFile(self.plotly_pyqt5.get_plotly_path_if_hs300_bais()))
 
     def msg(self):
-        '''
+        
         directory1 = QFileDialog.getExistingDirectory(self,
                                                       "选取文件夹",
                                                       "C:/")  # 起始路径
         print(directory1)
-        '''
+        
 
 #        fileName1, filetype = QFileDialog.getOpenFileName(self,
 #                                                          "选取文件",
@@ -32,7 +33,7 @@ class MyWindow(QMainWindow,Ui_MainWindow):
         print(fileName1)
 
         return fileName1
-        '''
+
         files, ok1 = QFileDialog.getOpenFileNames(self,
                                                   "多文件选择",
                                                   "C:/",
@@ -43,13 +44,13 @@ class MyWindow(QMainWindow,Ui_MainWindow):
                                                      "文件保存",
                                                      "C:/",
                                                      "All Files (*);;Text Files (*.txt)")
-        '''
 
 
 
 
 
 '''
+
 class MyWindow(QtWidgets.QWidget):
     def __init__(self):
         super(MyWindow, self).__init__()
@@ -59,6 +60,7 @@ class MyWindow(QtWidgets.QWidget):
         self.myButton.clicked.connect(self.msg)
 
     def msg(self):
+        '''
         directory1 = QFileDialog.getExistingDirectory(self,
                                                       "选取文件夹",
                                                       "C:/")  # 起始路径
@@ -76,13 +78,18 @@ class MyWindow(QtWidgets.QWidget):
                                                   "All Files (*);;Text Files (*.txt)")
         print(files, ok1)
 
+        '''
+        template = "RSM-RLT(A)钢筋笼长度检测报告.docx"
+        document_1 = MailMerge(template)
         fileName2, ok2 = QFileDialog.getSaveFileName(self,
                                                      "文件保存",
                                                      "C:/",
                                                      "All Files (*);;Text Files (*.txt)")
+        document_1.write(fileName2)
 
-'''
-'''
+
+
+
 if __name__ == "__main__":
     import sys
 
@@ -90,5 +97,4 @@ if __name__ == "__main__":
     myshow = MyWindow()
     myshow.show()
     sys.exit(app.exec_())
-'''
 

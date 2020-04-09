@@ -4,11 +4,9 @@ import plotly
 import plotly.offline as pyof
 #import plotly.plotly as py
 import plotly.graph_objs as go
-from PyQt5.QtWidgets import QMainWindow
 
 import numpy as np
-import matplotlib.pyplot as plt
-from QfileDialog import MyWindow
+from exercise.QfileDialog import MyWindow
 
 ########################################
 class Plotly_PyQt5():
